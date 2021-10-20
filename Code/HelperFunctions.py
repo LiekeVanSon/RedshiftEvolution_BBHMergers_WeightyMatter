@@ -2,6 +2,39 @@
 Collection of small functions that are useful when reducing and plotting data. 
 '''
 
+######################################
+## Imports
+import numpy as np
+import h5py as h5
+from astropy.table import Table
+
+import astropy.units as u
+
+# Chosen cosmology 
+from astropy.cosmology import WMAP9 as cosmo
+from astropy.cosmology import z_at_value
+
+
+######################################
+## locations
+save_loc    =  '../plots/'
+data_dir    = '../output/'
+
+
+#########################################
+# Class to show PDF images
+#########################################
+class PDF(object):
+  def __init__(self, pdf, size=(200,200)):
+    self.pdf = pdf
+    self.size = size
+
+  def _repr_html_(self):
+    return '<iframe src={0} width={1[0]} height={1[1]}></iframe>'.format(self.pdf, self.size)
+
+  def _repr_latex_(self):
+    return r'\includegraphics[width=1.0\textwidth]{{{0}}}'.format(self.pdf)
+
 
 #########################################
 # Chirp mass
@@ -82,4 +115,69 @@ def read_data(loc = data_dir+'/output/COMPAS_Output_wWeights.h5', rate_key = 'Ra
     
     return DCO, DCO_mask, redshifts, Average_SF_mass_needed, intrinsic_rate_density, intrinsic_rate_density_z0 
 
+
+
+
+
+#########################################
+# Bin rate density over crude z-bin
+#########################################
+def get_crude_rate_density(intrinsic_rate_density, fine_redshifts, crude_redshifts):
+    """
+        A function to take the 'volume averaged' intrinsic rate density for large (crude) redshift bins. 
+        This takes into account the change in volume for different redshift shells
+
+        !! This function assumes an integrer number of fine redshifts fit in a crude redshiftbin !!
+        !! We also assume the fine redshift bins and crude redshift bins are spaced equally in redshift !!
+        
+        Args:
+            intrinsic_rate_density    --> [2D float array] Intrinsic merger rate density for each binary at each redshift in 1/yr/Gpc^3
+            fine_redshifts            --> [list of floats] Edges of redshift bins at which the rates where evaluated
+            crude_redshifts           --> [list of floats] Merger rate for each binary at each redshift in 1/yr/Gpc^3
+
+        Returns:
+            crude_rate_density       --> [2D float array] Intrinsic merger rate density for each binary at new crude redshiftbins in 1/yr/Gpc^3
+
+    """
+    # Calculate the volume of the fine redshift bins
+    fine_volumes       = cosmo.comoving_volume(fine_redshifts).to(u.Gpc**3).value
+    fine_shell_volumes = np.diff(fine_volumes) #same len in z dimension as weight
+
+    # Multiply intrinsic rate density by volume of the redshift shells, to get the number of merging BBHs in each z-bin
+    N_BBH_in_z_bin         = (intrinsic_rate_density[:,:] * fine_shell_volumes[:])
     
+    # !! the following asusmes your redshift bins are equally spaced in both cases!!
+    # get the binsize of 
+    fine_binsize, crude_binsize    = np.diff(fine_redshifts), np.diff(crude_redshifts) 
+    if np.logical_and(np.all(np.round(fine_binsize,8) == fine_binsize[0]),  np.all(np.round(crude_binsize,8) == crude_binsize[0]) ):
+        fine_binsize    = fine_binsize[0]
+        crude_binsize   = crude_binsize[0] 
+    else:
+        print('Your fine redshifts or crude redshifts are not equally spaced!,',
+              'fine_binsize:', fine_binsize, 'crude_binsize', crude_binsize)
+        return -1
+
+    # !! also check that your crude redshift bin is made up of an integer number of fine z-bins !!
+    i_per_crude_bin = crude_binsize/fine_binsize 
+    print('i_per_crude_bin', i_per_crude_bin)
+    if (i_per_crude_bin).is_integer():
+        i_per_crude_bin = int(i_per_crude_bin)
+    else: 
+        print('your crude redshift bin is NOT made up of an integer number of fine z-bins!: i_per_crude_bin,', i_per_crude_bin)
+        return -1
+    
+    
+    # add every i_per_crude_bin-th element together, to get the number of merging BBHs in each crude redshift bin
+    N_BBH_in_crudez_bin    = np.add.reduceat(N_BBH_in_z_bin, np.arange(0, len(N_BBH_in_z_bin[0,:]), int(i_per_crude_bin) ), axis = 1)
+    
+    
+    # Convert crude redshift bins to volumnes and ensure all volumes are in Gpc^3
+    crude_volumes       = cosmo.comoving_volume(crude_redshifts).to(u.Gpc**3).value
+    crude_shell_volumes = np.diff(crude_volumes)# split volumes into shells 
+    
+    
+    # Finally tunr rate back into an average (crude) rate density, by dividing by the new z-volumes
+    # In case your crude redshifts don't go all the way to z_first_SF, just use N_BBH_in_crudez_bin up to len(crude_shell_volumes)
+    crude_rate_density     = N_BBH_in_crudez_bin[:, :len(crude_shell_volumes)]/crude_shell_volumes
+    
+    return crude_rate_density
