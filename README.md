@@ -42,8 +42,8 @@ The plot in this figure can be remade through [3_IntrinsicRate_Mbh_z.ipynb](./3_
 The plot in this figure can be remade through [4_FractionalContributionsChannels.ipynb](./4_FractionalContributionsChannels.ipynb)
 
 <table><tr>
-<td> <img src="/plots/png_versions/N1e7_Frac_Intrinsic_densRate_redshift1.png" width="500"/> </td>
-<td> <img src="/plots/png_versions/N1e7_Frac_Intrinsic_permassRate_redshift1.png" width="500"/> </td>
+<td> <img src="/plots/png_versions/N1e7_Frac_Intrinsic_densRate_redshift.png" width="500"/> </td>
+<td> <img src="/plots/png_versions/N1e7_Frac_Intrinsic_permassRate_redshift.png" width="500"/> </td>
 </tr></table>
 
 
