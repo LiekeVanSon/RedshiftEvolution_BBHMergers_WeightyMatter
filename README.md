@@ -18,7 +18,7 @@ This Cartoon is not created in a notebook, but is available in the plots folder 
 
 ## Figure 2:  MBH delay time distributions
 
-The plot in this figure can be remade through [2_Histograms_Mbh_tdelay.ipynb](./2_Histograms_Mbh_tdelay.ipynb)
+The plot in this figure can be remade through [2_Histograms_Mbh_tdelay.ipynb](./Code/2_Histograms_Mbh_tdelay.ipynb)
 Below we show the end result for the low metallicity selection
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_All_lowZMass_delaytime.png" width="500"/> </td>
@@ -28,7 +28,7 @@ Below we show the end result for the low metallicity selection
 
 ## Figure 3:  Intrinsic merger rate density in the plane of $M_{BH}$ and  merger redshift
 
-The plot in this figure can be remade through [3_IntrinsicRate_Mbh_z.ipynb](./3_IntrinsicRate_Mbh_z.ipynb)
+The plot in this figure can be remade through [3_IntrinsicRate_Mbh_z.ipynb](./Code/3_IntrinsicRate_Mbh_z.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_AllMass_redshift_M_moreMassive.png" width="500"/> </td>
@@ -39,7 +39,7 @@ The plot in this figure can be remade through [3_IntrinsicRate_Mbh_z.ipynb](./3_
 
 ## Figure 4: Fractional contribution of formation channels
 
-The plot in this figure can be remade through [4_FractionalContributionsChannels.ipynb](./4_FractionalContributionsChannels.ipynb)
+The plot in this figure can be remade through [4_FractionalContributionsChannels.ipynb](./Code/4_FractionalContributionsChannels.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_Frac_Intrinsic_densRate_redshift.png" width="500"/> </td>
@@ -49,7 +49,7 @@ The plot in this figure can be remade through [4_FractionalContributionsChannels
 
 ## Figure 5:  the BH primary mass distribution
 
-The plot in this figure can be remade through [5_MassDitributions.ipynb](./5_MassDitributions.ipynb)
+The plot in this figure can be remade through [5_MassDitributions.ipynb](./Code/5_MassDitributions.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_logMass_dist_by_redshift.png" width="500"/> </td>
@@ -59,14 +59,14 @@ The plot in this figure can be remade through [5_MassDitributions.ipynb](./5_Mas
 
 ## Figure 6:  the BH primary mass distribution split by metallicity
 
-The plot in this figure can be remade through [6_MassDistribution_split_by_Z.ipynb](./6_MassDistribution_split_by_Z.ipynb)
+The plot in this figure can be remade through [6_MassDistribution_split_by_Z.ipynb](./Code/6_MassDistribution_split_by_Z.ipynb)
 
 <img src="/plots/png_versions/Mass_dist_by_metallicityN1e7_0z_leq2.png" width="1000"/>
 
 
 ## Figure 7:  the BH primary mass distribution split by metallicity
 
-The plot in this figure can be remade through [7_Intrinsic_BBH_merger_rate_per_redshift.ipynb](./7_Intrinsic_BBH_merger_rate_per_redshift.ipynb)
+The plot in this figure can be remade through [7_Intrinsic_BBH_merger_rate_per_redshift.ipynb](./Code/7_Intrinsic_BBH_merger_rate_per_redshift.ipynb)
 
 <img src="/plots/png_versions/Rate_redshift_N1e7_Normalized_Rate_source.png" width="1000"/>
 
