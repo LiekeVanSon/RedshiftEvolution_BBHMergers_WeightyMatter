@@ -13,7 +13,7 @@ import astropy.units as u
 # Chosen cosmology 
 from astropy.cosmology import WMAP9 as cosmo
 from astropy.cosmology import z_at_value
-
+import sys 
 
 ######################################
 ## locations
@@ -44,7 +44,10 @@ def Mchirp(m1, m2):
     return chirp_mass    
    
 
-################################################
+#########################################
+# read all groups and subgroups 
+# from hdf5 file, and put in astropytable
+#########################################
 def hdf5_to_astropy(hdf5_file, group = 'SystemParameters' ):
     """convert your hdf5 table to astropy.table for easy indexing etc
     hdf5_file  =  Hdf5 file you would like to convert
@@ -56,6 +59,23 @@ def hdf5_to_astropy(hdf5_file, group = 'SystemParameters' ):
         table[key] =  Data[key]
     return table
 
+
+#########################################
+# Nice little progressbar script 
+# to know how far you are with bootstrapping
+#########################################
+def progressbar(it, prefix="", size=60, file=sys.stdout):
+    count = len(it)
+    def show(j):
+        x = int(size*j/count)
+        file.write("%s[%s%s] %i/%i\r" % (prefix, "#"*x, "."*(size-x), j, count))
+        file.flush()        
+    show(0)
+    for i, item in enumerate(it):
+        yield item
+        show(i+1)
+    file.write("\n")
+    file.flush()
 
 #########################################
 # Read data
@@ -181,3 +201,6 @@ def get_crude_rate_density(intrinsic_rate_density, fine_redshifts, crude_redshif
     crude_rate_density     = N_BBH_in_crudez_bin[:, :len(crude_shell_volumes)]/crude_shell_volumes
     
     return crude_rate_density
+
+
+
