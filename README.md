@@ -73,7 +73,7 @@ The plot in this figure can be remade through [7_Intrinsic_BBH_merger_rate_per_r
 
 ## Figure 8: 
 
-The plot in this figure can be remade through [8_OtherObservables.ipynb](./8_OtherObservables.ipynb)
+The plot in this figure can be remade through [8_OtherObservables.ipynb](./Code/8_OtherObservables.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_q_final_formdist.png" width="500"/> </td>
@@ -85,7 +85,7 @@ The plot in this figure can be remade through [8_OtherObservables.ipynb](./8_Oth
 # Figure 9
 
 
-The plot in this figure can be remade through [9_DelayTimeDistributions.ipynb](./9_DelayTimeDistributions.ipynb)
+The plot in this figure can be remade through [9_DelayTimeDistributions.ipynb](./Code/9_DelayTimeDistributions.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_logtDelayGyr_formdist.png" width="500"/> </td>
@@ -97,7 +97,7 @@ The plot in this figure can be remade through [9_DelayTimeDistributions.ipynb](.
 # Figure 10
 
 
-The plot in this figure can be remade through [10_ChripMassDistributions.ipynb](./10_ChripMassDistributions.ipynb)
+The plot in this figure can be remade through [10_ChripMassDistributions.ipynb](./Code/10_ChripMassDistributions.ipynb)
 
 <table><tr>
 <td> <img src="/plots/png_versions/N1e7_AllMass_redshift_Mchirp.png" width="500"/> </td>
@@ -110,7 +110,7 @@ The plot in this figure can be remade through [10_ChripMassDistributions.ipynb](
 # Figure 14
 
 
-The plot in this figure can be remade through [14_DetailedEvolutionExample.ipynb](./14_DetailedEvolutionExample.ipynb)
+The plot in this figure can be remade through [14_DetailedEvolutionExample.ipynb](./Code/14_DetailedEvolutionExample.ipynb)
 
 <img src="/plots/png_versions/Detail29118.png" width="1000"/> 
 
