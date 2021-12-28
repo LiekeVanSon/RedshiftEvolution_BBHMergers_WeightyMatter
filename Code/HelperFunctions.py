@@ -85,13 +85,17 @@ def read_data(loc = data_dir+'/output/COMPAS_Output_wWeights.h5', rate_key = 'Ra
         Read DCO, SYS and merger rate data, necesarry to make the plots in this 
         
         Args:
-            loc                  --> [string] Location of data
-            rate_key             --> [string] group key name of COMPAS HDF5 data that contains your merger rate
-            verbose              --> [bool] If you want to print statements while reading in 
+            loc                       --> [string] Location of data
+            rate_key                  --> [string] group key name of COMPAS HDF5 data that contains your merger rate
+            verbose                   --> [bool] If you want to print statements while reading in 
 
         Returns:
-            crude_rate_density   --> [2D float array] Intrinsic merger rate density for each binary at new crude redshiftbins in 1/yr/Gpc^3
-
+            DCO                       --> [astropy table obj.]
+            DCO_mask                  --> [list of bools]
+            redshifts                 --> [list of floats]
+            Average_SF_mass_needed    --> [float] 
+            intrinsic_rate_density    --> [2D array of floats]
+            intrinsic_rate_density_z0 --> [1D array of floats] 
     """
 
 
