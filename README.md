@@ -6,14 +6,20 @@
 
 # Index 
 
-This folder contains all the notebooks necessary to recreate the Figures in [van Son et al. 2021](https://ui.adsabs.harvard.edu/abs/2021arXiv211001634V/abstract). 
+This folder contains all the notebooks necessary to recreate the Figures in [van Son et al. 2022]([https://ui.adsabs.harvard.edu/abs/2021arXiv211001634V/abstract](https://iopscience.iop.org/article/10.3847/1538-4357/ac64a3)). 
 The data needed to reproduce these figures is freely available at Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5544170.svg)](https://doi.org/10.5281/zenodo.5544170)
+
 
 ## Figure 1:  Cartoon depiction of channels
 
 This Cartoon is not created in a notebook, but is available in the plots folder at 
 `/plots/CartoonBoth1.pdf`
+The source cartoons can be found in FormationChannelCartoons.pptx. 
+Feel free to use and adapt these cartoons to your needs! If you do, please credit this work [van Son et al. 2022]([https://ui.adsabs.harvard.edu/abs/2021arXiv211001634V/abstract](https://iopscience.iop.org/article/10.3847/1538-4357/ac64a3))
 
+<table><tr>
+<td> <img src="/plots/png_versions/FormationChannelCartoons.png" width="500"/> </td>
+</tr></table>
 
 
 ## Figure 2:  MBH delay time distributions
