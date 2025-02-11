@@ -14,8 +14,8 @@ The data needed to reproduce these figures is freely available at Zenodo: [![DOI
 
 This Cartoon is not created in a notebook, but is available in the plots folder at 
 `/plots/CartoonBoth1.pdf`
-The source cartoons can be found in FormationChannelCartoons.pptx. 
-Feel free to use and adapt these cartoons to your needs! If you do, please credit this work [van Son et al. 2022]([https://ui.adsabs.harvard.edu/abs/2021arXiv211001634V/abstract](https://iopscience.iop.org/article/10.3847/1538-4357/ac64a3))
+The source cartoons can be found in `FormationChannelCartoons.pptx`. 
+Feel free to use and adapt these cartoons to your needs! If you do, please credit this work :) 
 
 <table><tr>
 <td> <img src="/plots/png_versions/CE_stable_Cartoon.png" width="500"/> </td>
