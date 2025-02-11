@@ -18,6 +18,7 @@ The source cartoons can be found in FormationChannelCartoons.pptx.
 Feel free to use and adapt these cartoons to your needs! If you do, please credit this work [van Son et al. 2022]([https://ui.adsabs.harvard.edu/abs/2021arXiv211001634V/abstract](https://iopscience.iop.org/article/10.3847/1538-4357/ac64a3))
 
 <table><tr>
+<td> <img src="/plots/png_versions/CE_stable_Cartoon.png" width="500"/> </td>
 <td> <img src="/plots/png_versions/FormationChannelCartoons.png" width="500"/> </td>
 </tr></table>
 
